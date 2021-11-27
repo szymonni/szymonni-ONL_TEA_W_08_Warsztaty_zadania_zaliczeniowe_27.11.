@@ -10,7 +10,7 @@ import java.io.IOException;
 
 
 public class Zadanie2Page {
-    private static WebDriver driver;
+    private WebDriver driver;
 
     public Zadanie2Page(WebDriver driver) {
         this.driver = driver;
@@ -45,9 +45,6 @@ public class Zadanie2Page {
         dropdown.selectByVisibleText("M");
 
         WebElement quantity = driver.findElement(By.name("qty"));
-        quantity.clear();
-        quantity.clear();
-        quantity.clear();
         quantity.clear();
         quantity.click();
         quantity.sendKeys(number);

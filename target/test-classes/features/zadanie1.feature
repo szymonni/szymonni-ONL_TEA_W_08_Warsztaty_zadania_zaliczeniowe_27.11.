@@ -16,6 +16,7 @@ Feature: AddNewAddress
     And entering <phone> in Phone input
     And click on button Save
     Then address successfully added
+    Then checking form address <alias>, <address>, <city>, <zip> and <phone>
     And closed browser
 
     Examples:

@@ -115,6 +115,15 @@ public class Zadanie1Steps {
         Assert.assertEquals("Address successfully added!", successMsg.getText());
     }
 
+    @Then("^checking form address (.*), (.*), (.*), (.*) and (.*)$")
+    public void checkAddress(String alias, String address, String city, String postcode, String phone) {
+        String user = "Szymon Test";
+        String country = "United Kingdom";
+        String expectedValue = alias + "\n" + user + "\n" + address + "\n"  + city + "\n" + postcode + "\n" + country + "\n" + phone;
+        String comparisonValue = driver.findElement(By.className("address-body")).getText();
+        Assert.assertEquals(expectedValue, comparisonValue);
+    }
+
     @And("closed browser")
     public void closeBrowser() {
         driver.quit();
